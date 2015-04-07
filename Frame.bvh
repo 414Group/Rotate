@@ -9,7 +9,7 @@ ROOT hip
 		CHANNELS 3 Zrotation Yrotation Xrotation
 		JOINT lfemur
 		{
-			OFFSET 1.37959 -1.78713 0.86582
+			OFFSET 1.4954552389907472 0.27003172466086844 1.8808091272778866 
 			CHANNELS 3 Zrotation Yrotation Xrotation
 			JOINT ltibia
 			{
@@ -17,11 +17,11 @@ ROOT hip
 				CHANNELS 3 Zrotation Yrotation Xrotation
 				JOINT lfoot
 				{
-					OFFSET 2.59951 -7.14211 0.00000
+					OFFSET -0.273280587377622 -7.119795281074847 -2.6459441355302427 
 					CHANNELS 3 Zrotation Yrotation Xrotation
 					JOINT ltoes
 					{
-						OFFSET 0.18493 -0.50810 1.96120
+						OFFSET 1.7018426697790063 0.5919943763120612 0.9444280494745786 
 						CHANNELS 3 Zrotation Yrotation Xrotation
 						End Site
 						{
@@ -34,23 +34,23 @@ ROOT hip
 	}
 	JOINT rhipjoint
 	{
-		OFFSET 0 0 0
+		OFFSET 0.0 0.0 0.0 
 		CHANNELS 3 Zrotation Yrotation Xrotation
 		JOINT rfemur
 		{
-			OFFSET -1.33564 -1.78713 0.86582
+			OFFSET -1.811267148452972 -1.4922840936626178 -0.46884071883378364 
 			CHANNELS 3 Zrotation Yrotation Xrotation
 			JOINT rtibia
 			{
-				OFFSET -2.52705 -6.94302 0.00000
+				OFFSET -6.643804306565599 -2.449022992216654 2.110369432718972 
 				CHANNELS 3 Zrotation Yrotation Xrotation
 				JOINT rfoot
 				{
-					OFFSET -2.55964 -7.03257 0.00000
+					OFFSET -2.1348742497489197 -6.821622184018513 -2.2173363413712135 
 					CHANNELS 3 Zrotation Yrotation Xrotation
 					JOINT rtoes
 					{
-						OFFSET -0.25804 -0.70896 2.12109
+						OFFSET -1.795768893013225 -1.3075349566334882 0.3657842688901756 
 						CHANNELS 3 Zrotation Yrotation Xrotation
 						End Site
 						{
@@ -63,27 +63,27 @@ ROOT hip
 	}
 	JOINT lowerback
 	{
-		OFFSET 0 0 0
+		OFFSET 0.0 0.0 0.0 
 		CHANNELS 3 Zrotation Yrotation Xrotation
 		JOINT upperback
 		{
-			OFFSET -0.02031 2.24248 -0.18900
+			OFFSET 0.16512414997760766 -0.4912896525259326 -2.190027063512029 
 			CHANNELS 3 Zrotation Yrotation Xrotation
 			JOINT thorax
 			{
-				OFFSET 0.08342 2.24689 -0.03799
+				OFFSET -1.8208335352335971 1.077929079181263 0.7612824349899029 
 				CHANNELS 3 Zrotation Yrotation Xrotation
 				JOINT lowerneck
 				{
-					OFFSET 0 0 0
+					OFFSET 0.0 0.0 0.0 
 					CHANNELS 3 Zrotation Yrotation Xrotation
 					JOINT upperneck
 					{
-						OFFSET -0.11607 1.55844 0.24628
+						OFFSET -1.3853491347164775 -0.41285671641199706 0.6428206776028684 
 						CHANNELS 3 Zrotation Yrotation Xrotation
 						JOINT head
 						{
-							OFFSET 0.06877 1.60174 -0.17013
+							OFFSET -1.5780837561369032 0.11973905838592423 0.3075041038973214 
 							CHANNELS 3 Zrotation Yrotation Xrotation
 							End Site
 							{
@@ -94,27 +94,27 @@ ROOT hip
 				}
 				JOINT lclavicle
 				{
-					OFFSET 0 0 0
+					OFFSET 0.0 0.0 0.0 
 					CHANNELS 3 Zrotation Yrotation Xrotation
 					JOINT lhumerus
 					{
-						OFFSET 3.47537 0.55866 -0.72348
+						OFFSET -1.2749136054318069 3.143067726925878 -1.1871990168214699 
 						CHANNELS 3 Zrotation Yrotation Xrotation
 						JOINT lradius
 						{
-							OFFSET 5.38154 -0.00000 0.00000
+							OFFSET -3.5561185269121727 0.5688946020901269 -3.9989189446480062 
 							CHANNELS 3 Zrotation Yrotation Xrotation
 							JOINT lwrist
 							{
-								OFFSET 3.33312 -0.00000 0.00000
+								OFFSET -3.2130051401231317 -0.8867282018422198 0.0 
 								CHANNELS 3 Zrotation Yrotation Xrotation
 								JOINT lhand
 								{
-									OFFSET 0 0 0
+									OFFSET 0.0 0.0 0.0 
 									CHANNELS 3 Zrotation Yrotation Xrotation
 									JOINT lfingers
 									{
-										OFFSET 0.71079 -0.00000 0.00000
+										OFFSET 0.71079 0.0 0.0 
 										CHANNELS 3 Zrotation Yrotation Xrotation
 										End Site
 										{
@@ -124,7 +124,7 @@ ROOT hip
 								}
 								JOINT lthumb
 								{
-									OFFSET 0 0 0
+									OFFSET 0.0 0.0 0.0 
 									CHANNELS 3 Zrotation Yrotation Xrotation
 									End Site
 									{
@@ -137,27 +137,27 @@ ROOT hip
 				}
 				JOINT rclavicle
 				{
-					OFFSET 0 0 0
+					OFFSET 0.0 0.0 0.0 
 					CHANNELS 3 Zrotation Yrotation Xrotation
 					JOINT rhumerus
 					{
-						OFFSET -3.27844 0.90739 -0.35708
+						OFFSET -1.07132153001818 -2.9658627368568347 1.3247490243603104 
 						CHANNELS 3 Zrotation Yrotation Xrotation
 						JOINT rradius
 						{
-							OFFSET -5.16954 -0.00000 0.00000
+							OFFSET 0.23838025905816249 0.23123079849870315 -5.158861403596437 
 							CHANNELS 3 Zrotation Yrotation Xrotation
 							JOINT rwrist
 							{
-								OFFSET -3.38287 -0.00000 0.00000
+								OFFSET 2.6381769075617028 -2.117506090028591 0.0 
 								CHANNELS 3 Zrotation Yrotation Xrotation
 								JOINT rhand
 								{
-									OFFSET 0 0 0
+									OFFSET 0.0 0.0 0.0 
 									CHANNELS 3 Zrotation Yrotation Xrotation
 									JOINT rfingers
 									{
-										OFFSET -0.81797 -0.00000 0.00000
+										OFFSET -0.81797 0.0 0.0 
 										CHANNELS 3 Zrotation Yrotation Xrotation
 										End Site
 										{

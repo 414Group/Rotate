@@ -20,7 +20,7 @@ public class Rotate
     RotateFrame(infile, fileinfo, outfile, frame_num);
     
     System.out.println("fileinfo:");
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 7; i++) {
       System.out.println(fileinfo[i]);
     }
   }
@@ -34,40 +34,49 @@ public class Rotate
     int vector_num = 2;
     current_frame = gf.getframe(frame_num, fileinfo, infile);
     
-    RotateVector(3, current_frame, infile, fileinfo, outfile, gf);
+    RotateVector(current_frame, infile, fileinfo, outfile, gf);
   }
   
-  public static void RotateVector(int vector_num, String current_frame, String infile, int[] fileinfo, String outfile, GetFrame gf)
+  public static void RotateVector(String current_frame, String infile, int[] fileinfo, String outfile, GetFrame gf)
     throws IOException
   {
-    Double[] vector = { Double.valueOf(1.0D), Double.valueOf(2.0D), Double.valueOf(3.0D) };
-    Double[] theta = { Double.valueOf(30.0D), Double.valueOf(40.0D), Double.valueOf(50.0D) };
+    Double[] vector = new Double[90];
+    Double[] theta = new Double[90];
+    Double[] after = new Double[90];
+    Double[] _vector = new Double[3];
+    Double[] _theta = new Double[3];
+    Double[] _after = new Double[3];
     
-    Double[] after = { Double.valueOf(0.0D), Double.valueOf(0.0D), Double.valueOf(0.0D) };
     Write wr = new Write();
     Calculate cal = new Calculate();
     
-    theta = gf.gettheta(vector_num, current_frame);
-    vector = gf.getvector(vector_num, infile);
+    for(int i=0;i<fileinfo[0];i++)
+    {
+    	 _theta = gf.gettheta(i+1, current_frame);
+    	 _vector = gf.getvector(i+1, infile,fileinfo);
+    	 _after = cal.rotateyzx(_vector, _theta);
+    	 after[i*3]=_after[0];
+    	 after[i*3+1]=_after[1];
+    	 after[i*3+2]=_after[2];
+    }
+   
     
-    after = cal.rotateyzx(vector, theta);
-    
-    wr.OutWrite(vector_num, after, infile, fileinfo, outfile);
+    wr.OutWrite( after, infile, fileinfo, outfile);
     
     System.out.println("---------");
     System.out.println("vector:");
     for (int i = 0; i < 3; i++) {
-      System.out.println(vector[i]);
+      System.out.println(_vector[i]);
     }
     System.out.println("---------");
     System.out.println("theta:");
     for (int i = 0; i < 3; i++) {
-      System.out.println(theta[i]);
+      System.out.println(_theta[i]);
     }
     System.out.println("---------");
     System.out.println("after:");
     for (int i = 0; i < 3; i++) {
-      System.out.println(after[i]);
+      System.out.println(_after[i]);
     }
   }
 }

@@ -1,7 +1,10 @@
 package rotate.chen;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class GetFrame
@@ -35,28 +38,37 @@ public class GetFrame
     return theta;
   }
   
-  public Double[] getvector(int vector_num, String filename)
-    throws FileNotFoundException
+  public Double[] getvector(int vector_num, String infile, int[] fileinfo)
+    throws NumberFormatException, IOException
   {
+	FileReader fr = new FileReader(infile);
+	BufferedReader br = new BufferedReader(fr);
+	
     Double[] vector = new Double[3];
-    Scanner file = new Scanner(new File(filename));
     Double[] vectorlist = new Double[1024];
-    int count = 0;
-    while (file.hasNext())
-    {
-      String s = file.next();
-      if (s.equals("OFFSET"))
-      {
-        count++;
-        vectorlist[(count * 3 + 0)] = Double.valueOf(Double.parseDouble(file.next()));
-        vectorlist[(count * 3 + 1)] = Double.valueOf(Double.parseDouble(file.next()));
-        vectorlist[(count * 3 + 2)] = Double.valueOf(Double.parseDouble(file.next()));
-      }
-    }
-    vector[0] = vectorlist[((vector_num + 1) * 3 + 0)];
-    vector[1] = vectorlist[((vector_num + 1) * 3 + 1)];
-    vector[2] = vectorlist[((vector_num + 1) * 3 + 2)];
+    int linenumber=0;
+    int offset_count = 0;
+    String str=null;
     
+    while ((str = br.readLine()) != null )
+    {
+    	linenumber++;
+    	if (linenumber==fileinfo[11+offset_count])
+    	{
+    		offset_count++;
+    		Scanner line = new Scanner(str);
+    		line.next();
+    		vectorlist[(offset_count * 3 -3)] = Double.valueOf(Double.parseDouble(line.next()));
+    	    vectorlist[(offset_count * 3 -2)] = Double.valueOf(Double.parseDouble(line.next()));
+    	    vectorlist[(offset_count * 3 -1)] = Double.valueOf(Double.parseDouble(line.next()));
+    	    line.close();
+    	}
+    }
+ 
+    vector[0] = vectorlist[((vector_num) * 3 -3)];
+    vector[1] = vectorlist[((vector_num) * 3 -2)];
+    vector[2] = vectorlist[((vector_num) * 3 -1)];
+    br.close();
     return vector;
   }
 }
