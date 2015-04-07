@@ -41,16 +41,27 @@ public class Calculate
     return after;
   }
   
-  public Double[] rotateyzx(Double[] vector, Double[] theta)
+  public Double[] rotateyxz(Double[] vectorzyx, Double[] theta)
   {
-    Double[] after = { Double.valueOf(0.0D), Double.valueOf(0.0D), Double.valueOf(0.0D) };
-    Double ztheta = theta[1];
-    Double xtheta = theta[2];
-    Double ytheta = theta[0];
-    after = yrotate(vector, ztheta);
-    after = zrotate(after, xtheta);
-    after = xrotate(after, ytheta);
+    Double[] afterxyz = { Double.valueOf(0.0D), Double.valueOf(0.0D), Double.valueOf(0.0D) };
+    Double[] vectorxyz=new Double[3];
+    Double [] afterzyx=new Double[3];
+    Double ztheta = theta[0];
+    Double ytheta = theta[2];
+    Double xtheta = theta[1];
     
-    return after;
+    vectorxyz[0]=vectorzyx[2];
+    vectorxyz[1]=vectorzyx[1];
+    vectorxyz[2]=vectorzyx[0];
+   
+    afterxyz = yrotate(vectorxyz, ytheta);
+    afterxyz = xrotate(afterxyz, xtheta);
+    afterxyz = zrotate(afterxyz, ztheta);
+   
+    afterzyx[0]=afterxyz[2];
+    afterzyx[1]=afterxyz[1];
+    afterzyx[2]=afterxyz[0];
+    
+    return afterzyx;
   }
 }

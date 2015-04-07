@@ -54,7 +54,7 @@ public class Rotate
     {
     	 _theta = gf.gettheta(i+1, current_frame);
     	 _vector = gf.getvector(i+1, infile,fileinfo);
-    	 _after = cal.rotateyzx(_vector, _theta);
+    	 _after = cal.rotateyxz(_vector, _theta);
     	 after[i*3]=_after[0];
     	 after[i*3+1]=_after[1];
     	 after[i*3+2]=_after[2];
@@ -63,20 +63,20 @@ public class Rotate
     
     wr.OutWrite( after, infile, fileinfo, outfile);
     
-    System.out.println("---------");
-    System.out.println("vector:");
-    for (int i = 0; i < 3; i++) {
-      System.out.println(_vector[i]);
-    }
-    System.out.println("---------");
-    System.out.println("theta:");
-    for (int i = 0; i < 3; i++) {
-      System.out.println(_theta[i]);
-    }
-    System.out.println("---------");
-    System.out.println("after:");
-    for (int i = 0; i < 3; i++) {
-      System.out.println(_after[i]);
-    }
+//    System.out.println("---------");
+//    System.out.println("vector:");
+//    for (int i = 0; i < 3; i++) {
+//      System.out.println(_vector[i]);
+//    }
+//    System.out.println("---------");
+//    System.out.println("theta:");
+//    for (int i = 0; i < 3; i++) {
+//      System.out.println(_theta[i]);
+//    }
+//    System.out.println("---------");
+//    System.out.println("after:");
+//    for (int i = 0; i < 3; i++) {
+//      System.out.println(_after[i]);
+//    }
   }
 }
